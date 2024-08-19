@@ -1,0 +1,78 @@
+#mainFooter {
+    background-color: color("dark");
+    color: color("white");
+    padding: space(3) space(3);
+    // clear: both;
+    .footerContainer {
+        display: flex;
+        flex-direction: column;
+        .footerBox {
+            @extend .text-sm;
+
+            p {
+                @extend .text-white-op-4;
+            }
+            .club {
+                @extend .text-blue;
+            }
+            .hours {
+                @extend .text-white;
+            }
+        }
+
+        .mailcontainer {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 100%;
+            input {
+                border: none;
+                width: 100%;
+            }
+            div {
+                background-color: color("orange");
+                img {
+                    padding: space(2);
+                    width: 100%;
+                }
+            }
+        }
+        .rscontainer {
+            display: flex;
+            align-items: row;
+            gap: space(1);
+        }
+    }
+    #copyright {
+        font-size: font-size("xs");
+        text-align: center;
+        width: 100%;
+    } //end #mainFooter #copyright
+
+    //responsive md and up
+    @include media-breakpoint-up("md") {
+        address {
+            font-size: font-size("md");
+        }
+    }
+    //responsive lg and up
+    @include media-breakpoint-up("lg") {
+        .row {
+            width: map-get($breakpoints, breakpoint-previous("lg"));
+            @include center();
+        }
+        address {
+            font-size: font-size("lg");
+        }
+        #footerNav ul {
+            //max-width: 50%;
+            margin-left: auto;
+        }
+    }
+    //Responsive XL and up
+    @include media-breakpoint-up("xl") {
+        .row {
+            width: map-get($breakpoints, breakpoint-previous("xl"));
+        }
+    }
+}

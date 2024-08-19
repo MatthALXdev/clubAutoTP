@@ -1,0 +1,264 @@
+#mainContent.home {
+    // #featured {
+    //     background-image: url("/images/nature.jpg");
+    //     background-size: cover;
+    //     background-position: center bottom;
+    //     height: 50vh;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-end;
+    //     div {
+    //         background-color: scale-color(color("orange"), $alpha: -20%);
+    //         padding: space();
+    //         h1 {
+    //             color: color("blue");
+    //             font-size: font-size("xxl");
+    //         } // end .home #featured div h1
+    //         h2 {
+    //             color: color("white");
+    //             @include reset("heading");
+    //         } // end .home #featured div h2
+    //         a {
+    //             @extend .btn;
+    //             @extend .btn-blue;
+    //             width: 120px;
+    //             @include center();
+    //             margin-top: space(3);
+    //             color: color("white");
+    //             text-decoration: none;
+    //         } // end .home #featured div a
+    //     } // end .home #featured div
+    // } // end .home #featured
+    // .homeSection {
+    //     padding: space();
+    //     > h1 {
+    //         @include reset("heading");
+    //         font-size: font-size("xl");
+    //         color: color("blue");
+    //         margin-top: space();
+    //         margin-bottom: space(1);
+    //     } //end .homeSection > h1
+    //     div.articles > article {
+    //         margin-bottom: space();
+    //         border: 1px solid color("grey");
+    //         @include border-radius();
+    //         img {
+    //             @include border-radius("top");
+    //         }
+    //         .articleContent {
+    //             padding: space();
+    //         }
+    //     } //end .homeSection > artivle
+    //     a {
+    //         @extend .btn;
+    //         @extend .btn-grey;
+    //         width: 120px;
+    //         @include center();
+    //         color: color("white");
+    //         text-decoration: none;
+    //     } //end .homeSection a
+    // } //end .homeSection
+    // #about {
+    //     background-color: color("light");
+    // }
+
+    #presentation {
+        padding: map-get($spaces, 5);
+        ul {
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            padding: map-get($spaces, 1);
+            display: flex;
+        }
+        span {
+            margin: 0;
+            padding-right: map-get($spaces, 3);
+            color: color("orange");
+        }
+
+        .divider {
+            border: none;
+            height: 2px;
+            background-color: map-get($colors, "grey");
+            margin: 10px 0;
+        }
+    }
+    #vehicle1 {
+        background-image: url(/images/vente-location.jpg);
+        @extend .vehicle;
+        p {
+            @extend .text-white;
+        }
+    }
+    #showroom {
+        @extend .bg-dark;
+        @extend .text-white;
+        padding: space(3);
+        h2 {
+            margin: 0;
+            padding: space(2);
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 3px;
+            background-color: map-get($colors, "orange");
+            margin: space(2) 0 space(4) 0;
+        }
+        #showroom-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: space(2);
+            justify-content: center;
+        }
+
+        .card {
+            width: 100%;
+            /* Pour s'adapter à l'espace disponible */
+            display: flex;
+            flex-direction: column;
+
+            figure {
+                margin: 0 0 space(2) 0;
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            .card-content {
+                font-family: $title-font;
+                font-weight: 700;
+                padding: space(3);
+                @extend .bg-white-op-1;
+                @extend .text-white;
+                @extend .text-sm;
+
+                .card-price {
+                    @extend .btn;
+                    @extend .btn-blue;
+                    @extend .text-white;
+                    font-weight: 700;
+                    margin-left: space(3);
+                    padding: space(2) space(3) space(2) space(2);
+                }
+                .card-description {
+                    padding-right: space(2);
+                }
+                hr {
+                    height: 1px;
+                    @extend .bg-grey-op-2;
+                    margin: space(1) + space(3) 0 0 0;
+                }
+            }
+        }
+    }
+    #chooseUs {
+        padding: space(3);
+        .chooseBox {
+            display: flex;
+            flex-wrap: wrap;
+            gap: space(2);
+            justify-content: center;
+        }
+        .chooseItem {
+            width: 100%;
+            /* Pour s'adapter à l'espace disponible */
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            h3 {
+                margin: 0;
+            }
+
+            figure {
+                flex-shrink: 1;
+                margin: 0 space(2);
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            div {
+                flex-shrink: 2;
+                display: flex;
+                flex-direction: column;
+                padding-right: space(6);
+            }
+        }
+        #chooseFooter {
+            width: 100%;
+            margin: space(5) 0 space(4) 0;
+
+            display: flex;
+            justify-content: center;
+            .contactBtn {
+                @extend .btn;
+                @extend .btn-blue;
+                border-radius: space(1);
+                padding: space(3) space(4);
+                a {
+                    @extend .text-white;
+                    font-weight: 600;
+                    font-family: $title-font;
+                }
+            }
+        }
+    }
+    #vehicle2 {
+        background-image: url(/images/vehicule3.jpg);
+        @extend .vehicle;
+
+        span {
+            @extend .text-white;
+        }
+    }
+    /*responsive MD and up*/
+
+    @include media-breakpoint-up("md") {
+        #featured {
+            height: 80vh;
+        }
+        #about {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            img {
+                @include border-radius();
+            }
+            div {
+                padding: space();
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+        .homeSection .articles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: space();
+        }
+    }
+    /*responsive lg and up*/
+
+    @include media-breakpoint-up("lg") {
+        #about div {
+            padding: space(5);
+        }
+        #featured {
+            position: relative;
+            justify-content: center;
+            div {
+                width: 33%;
+                position: absolute;
+                right: 0;
+                padding: space(5) space();
+            }
+        }
+        .homeSection .articles {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
