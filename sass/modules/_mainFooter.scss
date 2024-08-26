@@ -2,7 +2,6 @@
     background-color: color("dark");
     color: color("white");
     padding: space(3) space(3);
-    // clear: both;
     .footerContainer {
         display: flex;
         flex-direction: column;
@@ -18,9 +17,8 @@
             .hours {
                 @extend .text-white;
             }
-        }
-
-        .mailcontainer {
+        } //end footerBox
+        .mailContainer {
             display: flex;
             flex-direction: row;
             align-items: stretch;
@@ -36,43 +34,112 @@
                     width: 100%;
                 }
             }
-        }
+        } //end mailContainer
         .rscontainer {
             display: flex;
-            align-items: row;
+            align-items: center;
             gap: space(1);
-        }
-    }
+            .iconCaps {
+                display: flex;
+                @extend .bg-white-op-2;
+                justify-content: center;
+                img {
+                    padding: space(2);
+                }
+            }
+        } //end rscontainer
+    } //end .footerContainer
+    hr {
+        height: 2px;
+        @extend .bg-grey-op-3;
+        margin: space(1) + space(3) 0 0 0;
+        border: none;
+    } //end hr
     #copyright {
         font-size: font-size("xs");
         text-align: center;
         width: 100%;
-    } //end #mainFooter #copyright
+        @extend .text-grey-op-5;
+    } //end  #copyright
 
     //responsive md and up
     @include media-breakpoint-up("md") {
-        address {
-            font-size: font-size("md");
+        .footerContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .footerBox {
+                .mailContainer,
+                p {
+                    max-width: 70%;
+                }
+                flex: 0 1 50%;
+                padding: space(2);
+            }
         }
     }
     //responsive lg and up
     @include media-breakpoint-up("lg") {
-        .row {
-            width: map-get($breakpoints, breakpoint-previous("lg"));
-            @include center();
-        }
-        address {
-            font-size: font-size("lg");
-        }
-        #footerNav ul {
-            //max-width: 50%;
-            margin-left: auto;
+        .footerContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .footerBox {
+                p {
+                    max-width: 100%;
+                }
+                .mailContainer {
+                    max-width: 70%;
+                }
+                flex: 0 1 32%;
+                padding: space(2);
+            }
+            #socialLinkFooter {
+                text-align: center;
+                flex: 0 1 100%;
+                .rscontainer {
+                    justify-content: center;
+                }
+            }
         }
     }
     //Responsive XL and up
     @include media-breakpoint-up("xl") {
-        .row {
-            width: map-get($breakpoints, breakpoint-previous("xl"));
+        .footerContainer {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+
+            #clubAutoFooter {
+                flex: 0 0 30%;
+                p {
+                    max-width: 100%;
+                }
+            }
+            #openHoursFooter {
+                flex: 0 0 20%;
+                p {
+                    max-width: 100%;
+                }
+            }
+            #NewsletterFooter {
+                flex: 0 0 20%;
+                .mailContainer,
+                p {
+                    max-width: 100%;
+                }
+            }
+            #socialLinkFooter {
+                flex: 0 0 25%;
+                text-align: start;
+                .rscontainer {
+                    justify-content: flex-start;
+                }
+            }
         }
     }
 }
