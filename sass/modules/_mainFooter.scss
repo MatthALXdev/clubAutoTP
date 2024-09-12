@@ -82,6 +82,7 @@
     }
     //responsive lg and up
     @include media-breakpoint-up("lg") {
+        padding: space(3) space(6) * 2;
         .footerContainer {
             display: flex;
             flex-direction: row;

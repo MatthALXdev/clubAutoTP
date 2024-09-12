@@ -50,7 +50,10 @@
             gap: space(2);
             justify-content: center;
         }
-
+        #card2,
+        #card3 {
+            display: none;
+        }
         .card {
             width: 100%;
             /* Pour s'adapter à l'espace disponible */
@@ -159,12 +162,33 @@
         #presentation {
         }
         #vehicle1 {
+            .container {
+                display: flex;
+                flex-direction: row;
+                padding: space(3) space(6);
+                div {
+                    flex: 0 2 49%;
+                }
+            }
         }
         #showroom {
         }
         #chooseUs {
+            .chooseBox {
+                .chooseItem {
+                    flex: 0 2 49%;
+                }
+            }
         }
         #vehicle2 {
+            .container {
+                max-width: 80%;
+
+                .Box1 {
+                    margin: space(6) 0 space(6) * 2 space(6) * 2;
+                    padding: space(3);
+                }
+            }
         }
     }
     /*responsive lg and up*/
@@ -175,10 +199,25 @@
         #vehicle1 {
         }
         #showroom {
+            padding: space(3) space(6);
+            .card {
+                flex: 0 2 49%;
+            }
+            #card2 {
+                display: flex;
+            }
         }
         #chooseUs {
         }
         #vehicle2 {
+            .container {
+                max-width: 60%;
+
+                .Box1 {
+                    margin: space(6) 0 space(6) * 2 space(6) * 2;
+                    padding: space(3);
+                }
+            }
         }
     }
     @include media-breakpoint-up("xl") {
@@ -187,11 +226,34 @@
         #vehicle1 {
         }
         #showroom {
+            .card {
+                flex: 0 2 32%;
+            }
+            #card3 {
+                display: flex;
+            }
         }
         #chooseUs {
+            .chooseBox {
+                padding: space(2) space(6);
+                .chooseItem {
+                    flex: 0 2 24%;
+                    div {
+                        padding: space(2);
+                    }
+                }
+            }
         }
         #vehicle2 {
             background-position: top;
+            .container {
+                max-width: 40%;
+
+                .Box1 {
+                    margin: space(6) 0 space(6) * 2 space(6) * 2;
+                    padding: space(3);
+                }
+            }
         }
     }
 }

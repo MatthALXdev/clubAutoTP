@@ -686,35 +686,35 @@
 }
 
 .text-xxs {
-  font-size: 0.4rem;
+  font-size: 0.35rem;
 }
 
 .text-xs {
-  font-size: 0.64rem;
+  font-size: 0.56rem;
 }
 
 .text-sm, #mainContent.home #showroom .card .card-content, #mainFooter .footerContainer .footerBox {
-  font-size: 0.72rem;
+  font-size: 0.63rem;
 }
 
 .text-md {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .text-lg {
-  font-size: 1.04rem;
+  font-size: 0.91rem;
 }
 
 .text-xl, #mainHeader #logo {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 
 .text-xxl {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .text-3xl {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .bg-image, .vehicle, #mainContent.home #vehicle2, #mainContent.home #vehicle1 {
@@ -745,7 +745,7 @@
 
 body {
   font-family: "open-sans", Verdana, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #232628;
   padding: 0;
   margin: 0;
@@ -803,7 +803,7 @@ a {
   margin: 0;
 }
 #mainHeader .unitsHeader img {
-  width: 2rem;
+  width: 1.75rem;
 }
 #mainHeader #menuToggle {
   text-align: right;
@@ -829,7 +829,7 @@ a {
   text-decoration: none;
   padding: 0.5rem;
   color: #ffffff;
-  font-size: 1.04rem;
+  font-size: 0.91rem;
   display: block;
   border-radius: 5px;
   transition: background-color 0.5s ease;
@@ -850,7 +850,7 @@ a {
     padding: 0;
   }
   #mainHeader #mainNav ul li a {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   #mainHeader #mainNav .unitsHeader {
     display: flex;
@@ -901,7 +901,7 @@ a {
   border: none;
 }
 #mainFooter #copyright {
-  font-size: 0.64rem;
+  font-size: 0.56rem;
   text-align: center;
   width: 100%;
 }
@@ -922,6 +922,9 @@ a {
   }
 }
 @media screen and (min-width: 992px) {
+  #mainFooter {
+    padding: 1rem 6rem;
+  }
   #mainFooter .footerContainer {
     display: flex;
     flex-direction: row;
@@ -1029,6 +1032,10 @@ a {
   gap: 0.5rem;
   justify-content: center;
 }
+#mainContent.home #showroom #card2,
+#mainContent.home #showroom #card3 {
+  display: none;
+}
 #mainContent.home #showroom .card {
   width: 100%;
   /* Pour s'adapter à l'espace disponible */
@@ -1111,9 +1118,69 @@ a {
 #mainContent.home #vehicle2 {
   background-image: url(/images/vehicule3.jpg);
 }
+@media screen and (min-width: 768px) {
+  #mainContent.home #vehicle1 .container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 3rem;
+  }
+  #mainContent.home #vehicle1 .container div {
+    flex: 0 2 49%;
+  }
+  #mainContent.home #chooseUs .chooseBox .chooseItem {
+    flex: 0 2 49%;
+  }
+  #mainContent.home #vehicle2 .container {
+    max-width: 80%;
+  }
+  #mainContent.home #vehicle2 .container .Box1 {
+    margin: 3rem 0 6rem 6rem;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #mainContent.home #showroom {
+    padding: 1rem 3rem;
+  }
+  #mainContent.home #showroom .card {
+    flex: 0 2 49%;
+  }
+  #mainContent.home #showroom #card2 {
+    display: flex;
+  }
+  #mainContent.home #vehicle2 .container {
+    max-width: 60%;
+  }
+  #mainContent.home #vehicle2 .container .Box1 {
+    margin: 3rem 0 6rem 6rem;
+    padding: 1rem;
+  }
+}
 @media screen and (min-width: 1200px) {
+  #mainContent.home #showroom .card {
+    flex: 0 2 32%;
+  }
+  #mainContent.home #showroom #card3 {
+    display: flex;
+  }
+  #mainContent.home #chooseUs .chooseBox {
+    padding: 0.5rem 3rem;
+  }
+  #mainContent.home #chooseUs .chooseBox .chooseItem {
+    flex: 0 2 24%;
+  }
+  #mainContent.home #chooseUs .chooseBox .chooseItem div {
+    padding: 0.5rem;
+  }
   #mainContent.home #vehicle2 {
     background-position: top;
+  }
+  #mainContent.home #vehicle2 .container {
+    max-width: 40%;
+  }
+  #mainContent.home #vehicle2 .container .Box1 {
+    margin: 3rem 0 6rem 6rem;
+    padding: 1rem;
   }
 }
 
@@ -1121,22 +1188,22 @@ a {
   /*Responsive MD and up*/
 }
 #mainContent.text h1 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 #mainContent.text h2 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
 }
 #mainContent.text h3 {
-  font-size: 1.04rem;
+  font-size: 0.91rem;
 }
 #mainContent.text h4 {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 #mainContent.text h5 {
-  font-size: 0.72rem;
+  font-size: 0.63rem;
 }
 #mainContent.text h6 {
-  font-size: 0.64rem;
+  font-size: 0.56rem;
 }
 #mainContent.text h2 {
   color: #6c98e1;
