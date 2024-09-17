@@ -9,10 +9,8 @@
   <body>
 <!-- mainHeader -->
     <header id="mainHeader">
-            <div  id="menuToggle">
-                <button class="btn"><img src="/images/hamburger.svg" alt="Menu Toggle"></button>
-            </div>
-            <div id="logo" class="unitsHeader"><p>CLUB AUTO</p></div>
+        <div id="frontHeader">            
+            <div id="logo" class="unitsHeader"><p class="logoWord">CLUB AUTO</p></div>
             <div id="adresse" class="unitsHeader">
                 <img src="/images/icone-adresse.png" alt="icône d'adresse" />
                 <div>
@@ -30,24 +28,30 @@
             <div id="openingHours" class="unitsHeader">
                 <div>
                     <p>OUVERTURE : <span> Du Lundi au Samedi </span></p>
-                    <p>HORAIRES : <span>pan>De 9h à 17h</span> </p>
+                    <p>HORAIRES : <span>De 9h à 17h</span> </p>
                 </div>
             </div>
             <div  id="socialTools" class="unitsHeader">
                 <img src="/images/facebook.svg" alt="Icône de facebook">
                 <img src="/images/twitter.svg" alt="Icône de twitter">
             </div>
+            <div  id="menuToggle">
+                <button class="button1"><img src="/images/hamburger.svg" alt="Menu Toggle"></button>
+            </div>
+            </div>
         <!--Barre de navigation-->
         <nav id="mainNav">
-            <ul class="collapsed">
+            <ul class="listNav">
                 <li><a href="#">ACCEUIL</a></li>
                 <li><a href="#">VENTE</a></li>
                 <li><a href="#">LOCATION</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
         </nav>
-
+        <div id="footHeader">
+        <img src="/images/vehicule1.jpg" alt="CLUB AUTO IMAGES">
         <h1>CLUB AUTO <span>LE MEILLEUR DE L'AUTOMOBILE</span></h1>
+        </div>
     </header>
 <!--Fin de header--->
 <!--Main content-->
@@ -56,15 +60,19 @@
         <section id="presentation">
             <div>
                 <img src="/images/clients.jpg" alt="Photo de deux client devant un véhicule">
-                <h2>BIENVENUE CHEZ  <span>CLUB AUTO</span></h2>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eligendi porro deleniti rerum</h3>
-                <p>Maxime temporibus, placeat ipsam, odit eos asperiores consectetur cumque veniam deserunt, pariatur deleniti. Magni quaerat, repudiandae minus quis harum beatae quo? Corporis?</p>
+                <div>
+                <h2 class="text">BIENVENUE CHEZ  <span>CLUB AUTO</span></h2>
+                <h3 class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eligendi porro deleniti rerum</h3>
+                <p class="text">Maxime temporibus, placeat ipsam, odit eos asperiores consectetur cumque veniam deserunt, pariatur deleniti. Magni quaerat, repudiandae minus quis harum beatae quo? Corporis?
+                </p>
+                </div>
             </div>
             <div>
-                <h2>LE MEILLEUR DE L'AUTOMOBILE</h1>
-                <hr class="divider">
-                <p>Maxime temporibus, placeat ipsam, odit eos asperiores consectetur cumque veniam deserunt, pariatur deleniti. Magni quaerat, repudiandae minus quis harum beatae quo? Corporis?</p>
-                <ul>
+                <div>
+                <h2 class="text">LE MEILLEUR DE L'AUTOMOBILE</h1>
+                <hr class="divider text">
+                <p class="text">Maxime temporibus, placeat ipsam, odit eos asperiores consectetur cumque veniam deserunt, pariatur deleniti. Magni quaerat, repudiandae minus quis harum beatae quo? Corporis?</p>
+                <ul class="text">
                     <li><span><img src="/images/check-lg.svg" alt="Validation logo">
                     </span>Lorem ipsum dolor sit amet.</li>
                     <li><span><img src="/images/check-lg.svg" alt="Validation logo">
@@ -76,6 +84,7 @@
                     <li><span><img src="/images/check-lg.svg" alt="Validation logo">
                     </span>Lorem ipsum dolor sit amet.</li>
                 </ul>
+                </div>
                 <img src="/images/entretien.jpg" alt="Photo d'un agent entretenant un véhicule">
             </div>
         </section>

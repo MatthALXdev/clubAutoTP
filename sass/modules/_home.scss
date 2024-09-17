@@ -23,7 +23,13 @@
         }
     } // end presentation
     #vehicle1 {
+        display: flex;
+        align-items: center;
         background-image: url(/images/vente-location.jpg);
+        background-position: top center;
+        background-size: cover;
+        min-height: 518px;
+        background-repeat: no-repeat;
         @extend .vehicle;
         p {
             @extend .text-white;
@@ -160,12 +166,28 @@
 
     @include media-breakpoint-up("md") {
         #presentation {
+            padding: space(2);
+            div {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: space(3) space(6);
+                align-content: center;
+                div {
+                    grid-template-columns: 1fr;
+                    gap: space(1);
+                }
+                img {
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
         }
         #vehicle1 {
             .container {
                 display: flex;
                 flex-direction: row;
-                padding: space(3) space(6);
+                padding: space(4);
                 div {
                     flex: 0 2 49%;
                 }
@@ -195,8 +217,12 @@
 
     @include media-breakpoint-up("lg") {
         #presentation {
+            padding: space(3) space(6);
         }
         #vehicle1 {
+            .container {
+                padding: space(6);
+            }
         }
         #showroom {
             padding: space(3) space(6);
@@ -222,8 +248,12 @@
     }
     @include media-breakpoint-up("xl") {
         #presentation {
+            padding: space(5) space(6) * 2 space(3) space(6) * 2;
         }
         #vehicle1 {
+            .container {
+                padding: space(6) * 2;
+            }
         }
         #showroom {
             .card {
@@ -254,6 +284,22 @@
                     padding: space(3);
                 }
             }
+        }
+    }
+    @include media-breakpoint-up("xxl") {
+        #presentation {
+        }
+        #vehicle1 {
+            .container {
+                padding: space(6) * 3;
+            }
+        }
+        #showroom {
+        }
+        #chooseUs {
+        }
+
+        #vehicle2 {
         }
     }
 }

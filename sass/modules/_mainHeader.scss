@@ -1,110 +1,151 @@
 #mainHeader {
+    font-family: $title-font;
     @extend .bg-dark;
-    height: $headerHeight;
+    position: relative;
+    max-height: $headerHeight;
     padding: space(3);
     @include display-grid;
+    gap: space(2);
     align-items: end;
     @extend .text-white;
-    #logo {
-        @extend .text-xl;
-        display: none;
-    }
-    #adresse,
-    #openingHours,
-    #socialTools {
-        display: none;
-    } //end #mainHeader #logo
-    .unitsHeader {
+
+    align-content: space-between;
+    #frontHeader {
+        padding: space(3);
         display: flex;
-        flex-direction: row;
-        font-weight: bold;
-        align-items: center;
-        // max-width: 100%; /* L'image ne dépassera pas la largeur de la div parente */
-        // max-height: 100%; /* L'image ne dépassera pas la hauteur de la div parente */
-        // width: auto; /* L'image conserve son ratio largeur/hauteur */
-        // height: auto;
-        a {
-            text-decoration: none;
-            @extend .text-white;
-        }
-        p {
-            margin: 0;
-            @extend .text-orange;
-            span {
+        flex-direction: column-reverse;
+        #logo {
+            @extend .text-3xl;
+            .logoWord {
                 @extend .text-white;
             }
         }
-        img {
-            width: map-get($font-sizes, "3xl");
+        #logo,
+        #adresse,
+        #openingHours,
+        #socialTools {
+            display: none;
+        } //end #mainHeader #logo
+        .unitsHeader {
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            align-items: center;
+            a {
+                text-decoration: none;
+                @extend .text-white;
+            }
+            p {
+                margin: 0;
+                @extend .text-orange;
+                span {
+                    @extend .text-white;
+                }
+            }
+            img {
+                width: map-get($font-sizes, "3xl");
+                clip-path: inset(0 0 50px 0);
+            }
+        }
+        #menuToggle {
+            text-align: right;
+            button {
+                @extend .btn;
+                justify-content: flex-end;
+            }
         }
     }
-    #menuToggle {
-        text-align: right;
-        button {
-            @extend .btn-dark;
-        }
-    } //end #mainHeader #menuToggle
+    //end #mainHeader #menuToggle
     #mainNav {
         display: none;
-        ul {
-            @include reset("list");
-            display: none;
-            position: absolute;
-            top: $headerHeight;
-            left: 0;
-            padding: space(2);
-            background-color: color("blue");
+        position: absolute;
+        top: space(6) * 1.95;
+        left: space(3);
+        right: space(3);
+        z-index: 999;
+        @extend .bg-white-op-5;
+        justify-content: flex-end;
+        .listNav {
             width: 100%;
-            li a {
-                @include reset("link");
-                padding: space(2);
-                color: color("white");
-                font-size: font-size("lg");
-                display: block;
-                @include border-radius();
-                @if $enable-transitions {
-                    @include transitions("background-color");
-                }
-                &:hover,
-                &.active {
-                    background-color: lighten(color("blue"), 10);
-                }
-            } //end #mainHeader #mainNav ul li a
-        } //end #mainHeader #mainNav ul
-    } //end #mainHeader #mainNav
+            justify-content: flex-end;
+            display: flex;
+            li {
+                padding: space(1) space(3);
+                @extend .text-md;
+                font-weight: 700;
+                list-style: none;
+            }
+        }
+    }
+    //end #mainHeader #mainNav
+    #footHeader img {
+        display: none;
+    }
     h1 {
         span {
             @extend .text-orange;
         }
     }
 
-    // #userTools {
-    //     text-align: right;
-    //     img {
-    //         max-height: calc(#{$headerHeight} - #{space(2) * 2});
-    //         @include border-radius("circle");
-    //         border: 3px solid color("white");
-    //     } //end #mainHeader #userTools img
-    // } //end #mainHeader #userTools
-
-    //responsive MD and up
-    @include media-breakpoint-up("md") {
-        #menuToggle {
-            display: none;
+    //responsive SM and up
+    @include media-breakpoint-up("sm") {
+        height: Auto;
+        max-height: none;
+        #footHeader > img {
+            display: flex;
+            width: 100%;
         }
-        #mainNav {
-            margin-left: auto;
-            ul {
-                display: flex !important;
-                position: static;
-                padding: 0;
-                li a {
-                    font-size: font-size("md");
-                } // end #mainNav ul li a
-            } // end #mainNav ul
-            .unitsHeader {
+        #frontHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: space(2);
+            #logo {
                 display: flex;
             }
+        }
+    }
+    @include media-breakpoint-up("md") {
+        #frontHeader {
+            max-height: 97px;
+            padding: space(3) space(6);
+        }
+        #frontHeader > #menuToggle {
+            display: none;
+        }
+
+        #frontHeader > #adresse {
+            display: flex;
+            div > address {
+                font-style: normal;
+                font-weight: normal;
+            }
+        }
+        #mainNav {
+            display: flex;
+            .listNav {
+                padding-right: space(5);
+            }
+        }
+    }
+    @include media-breakpoint-up("lg") {
+        #frontHeader {
+            padding: space(3);
+            #openingHours {
+                display: flex;
+            }
+        }
+    }
+    @include media-breakpoint-up("xl") {
+        #frontHeader {
+            #socialTools {
+                display: flex;
+            }
+        }
+    }
+    @include media-breakpoint-up("xxl") {
+        #frontHeader {
+            padding: space(3) space(6);
         }
     }
 }

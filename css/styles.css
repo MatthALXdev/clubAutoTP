@@ -2,7 +2,7 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Questrial&display=swap");
-.btn, #mainContent.home #chooseUs #chooseFooter .contactBtn, #mainContent.home #showroom .card .card-content .card-price {
+.btn, #mainContent.home #chooseUs #chooseFooter .contactBtn, #mainContent.home #showroom .card .card-content .card-price, #mainHeader #frontHeader #menuToggle button {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -37,11 +37,11 @@
   background-color: white;
 }
 
-.btn-dark, #mainHeader #menuToggle button {
+.btn-dark {
   background-color: #232628;
   transition: background-color 0.5s ease, color 0.5s ease, border 0.5s ease;
 }
-.btn-dark:hover, #mainHeader #menuToggle button:hover {
+.btn-dark:hover {
   background-color: #535a5e;
 }
 
@@ -113,7 +113,7 @@
   color: #6c98e1;
 }
 
-.text-orange, #mainHeader h1 span, #mainHeader .unitsHeader p {
+.text-orange, #mainHeader h1 span, #mainHeader #frontHeader .unitsHeader p {
   color: #cc6119;
 }
 
@@ -289,7 +289,7 @@
   color: #ff4848;
 }
 
-.text-white, #mainContent.home #vehicle2 span, #mainContent.home #chooseUs #chooseFooter .contactBtn a, #mainContent.home #showroom .card .card-content .card-price, #mainContent.home #showroom .card .card-content, #mainContent.home #showroom, #mainContent.home #vehicle1 p, #mainFooter .footerContainer .footerBox .hours, #mainHeader .unitsHeader p span, #mainHeader .unitsHeader a, #mainHeader {
+.text-white, #mainContent.home #vehicle2 span, #mainContent.home #chooseUs #chooseFooter .contactBtn a, #mainContent.home #showroom .card .card-content .card-price, #mainContent.home #showroom .card .card-content, #mainContent.home #showroom, #mainContent.home #vehicle1 p, #mainFooter .footerContainer .footerBox .hours, #mainHeader #frontHeader .unitsHeader p span, #mainHeader #frontHeader .unitsHeader a, #mainHeader #frontHeader #logo .logoWord, #mainHeader {
   color: #ffffff;
 }
 
@@ -617,7 +617,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.bg-white-op-5 {
+.bg-white-op-5, #mainHeader #mainNav {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -697,7 +697,7 @@
   font-size: 0.63rem;
 }
 
-.text-md {
+.text-md, #mainHeader #mainNav .listNav li {
   font-size: 0.7rem;
 }
 
@@ -705,7 +705,7 @@
   font-size: 0.91rem;
 }
 
-.text-xl, #mainHeader #logo {
+.text-xl {
   font-size: 1.05rem;
 }
 
@@ -713,7 +713,7 @@
   font-size: 1.4rem;
 }
 
-.text-3xl {
+.text-3xl, #mainHeader #frontHeader #logo {
   font-size: 1.75rem;
 }
 
@@ -727,15 +727,13 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-top: 3rem;
 }
 .vehicle .container div, #mainContent.home #vehicle2 .container div, #mainContent.home #vehicle1 .container div {
   padding: 3rem 6rem 3rem 3rem;
 }
 .vehicle .container div h2, #mainContent.home #vehicle2 .container div h2, #mainContent.home #vehicle1 .container div h2 {
   font-weight: 800;
-}
-.vehicle .container .Box1, #mainContent.home #vehicle2 .container .Box1, #mainContent.home #vehicle1 .container .Box1 {
-  margin-top: 2rem;
 }
 *,
 *::before,
@@ -777,83 +775,128 @@ a {
 }
 
 #mainHeader {
-  height: 400px;
+  font-family: "montserrat", "Times New Roman", "Times", serif;
+  position: relative;
+  max-height: 400px;
   padding: 1rem;
   display: grid;
+  gap: 0.5rem;
   align-items: end;
+  align-content: space-between;
 }
-#mainHeader #logo {
+#mainHeader #frontHeader {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+}
+#mainHeader #frontHeader #logo,
+#mainHeader #frontHeader #adresse,
+#mainHeader #frontHeader #openingHours,
+#mainHeader #frontHeader #socialTools {
   display: none;
 }
-#mainHeader #adresse,
-#mainHeader #openingHours,
-#mainHeader #socialTools {
-  display: none;
-}
-#mainHeader .unitsHeader {
+#mainHeader #frontHeader .unitsHeader {
   display: flex;
   flex-direction: row;
   font-weight: bold;
   align-items: center;
 }
-#mainHeader .unitsHeader a {
+#mainHeader #frontHeader .unitsHeader a {
   text-decoration: none;
 }
-#mainHeader .unitsHeader p {
+#mainHeader #frontHeader .unitsHeader p {
   margin: 0;
 }
-#mainHeader .unitsHeader img {
+#mainHeader #frontHeader .unitsHeader img {
   width: 1.75rem;
+  -webkit-clip-path: inset(0 0 50px 0);
+          clip-path: inset(0 0 50px 0);
 }
-#mainHeader #menuToggle {
+#mainHeader #frontHeader #menuToggle {
   text-align: right;
+}
+#mainHeader #frontHeader #menuToggle button {
+  justify-content: flex-end;
 }
 #mainHeader #mainNav {
   display: none;
-}
-#mainHeader #mainNav ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  display: none;
   position: absolute;
-  top: 400px;
-  left: 0;
-  padding: 0.5rem;
-  background-color: #6c98e1;
+  top: 5.85rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 999;
+  justify-content: flex-end;
+}
+#mainHeader #mainNav .listNav {
   width: 100%;
+  justify-content: flex-end;
+  display: flex;
 }
-#mainHeader #mainNav ul li a {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  padding: 0.5rem;
-  color: #ffffff;
-  font-size: 0.91rem;
-  display: block;
-  border-radius: 5px;
-  transition: background-color 0.5s ease;
+#mainHeader #mainNav .listNav li {
+  padding: 0.25rem 1rem;
+  font-weight: 700;
+  list-style: none;
 }
-#mainHeader #mainNav ul li a:hover, #mainHeader #mainNav ul li a.active {
-  background-color: #96b6ea;
+#mainHeader #footHeader img {
+  display: none;
+}
+@media screen and (min-width: 576px) {
+  #mainHeader {
+    height: Auto;
+    max-height: none;
+  }
+  #mainHeader #footHeader > img {
+    display: flex;
+    width: 100%;
+  }
+  #mainHeader #frontHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  #mainHeader #frontHeader #logo {
+    display: flex;
+  }
 }
 @media screen and (min-width: 768px) {
-  #mainHeader #menuToggle {
+  #mainHeader #frontHeader {
+    max-height: 97px;
+    padding: 1rem 3rem;
+  }
+  #mainHeader #frontHeader > #menuToggle {
     display: none;
   }
-  #mainHeader #mainNav {
-    margin-left: auto;
-  }
-  #mainHeader #mainNav ul {
-    display: flex !important;
-    position: static;
-    padding: 0;
-  }
-  #mainHeader #mainNav ul li a {
-    font-size: 0.7rem;
-  }
-  #mainHeader #mainNav .unitsHeader {
+  #mainHeader #frontHeader > #adresse {
     display: flex;
+  }
+  #mainHeader #frontHeader > #adresse div > address {
+    font-style: normal;
+    font-weight: normal;
+  }
+  #mainHeader #mainNav {
+    display: flex;
+  }
+  #mainHeader #mainNav .listNav {
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  #mainHeader #frontHeader {
+    padding: 1rem;
+  }
+  #mainHeader #frontHeader #openingHours {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #mainHeader #frontHeader #socialTools {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #mainHeader #frontHeader {
+    padding: 1rem 3rem;
   }
 }
 
@@ -1010,7 +1053,13 @@ a {
   margin: 10px 0;
 }
 #mainContent.home #vehicle1 {
+  display: flex;
+  align-items: center;
   background-image: url(/images/vente-location.jpg);
+  background-position: top center;
+  background-size: cover;
+  min-height: 518px;
+  background-repeat: no-repeat;
 }
 #mainContent.home #showroom {
   padding: 1rem;
@@ -1119,10 +1168,28 @@ a {
   background-image: url(/images/vehicule3.jpg);
 }
 @media screen and (min-width: 768px) {
+  #mainContent.home #presentation {
+    padding: 0.5rem;
+  }
+  #mainContent.home #presentation div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem 3rem;
+    align-content: center;
+  }
+  #mainContent.home #presentation div div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  #mainContent.home #presentation div img {
+    align-self: center;
+    justify-self: center;
+  }
   #mainContent.home #vehicle1 .container {
     display: flex;
     flex-direction: row;
-    padding: 1rem 3rem;
+    padding: 1.5rem;
   }
   #mainContent.home #vehicle1 .container div {
     flex: 0 2 49%;
@@ -1139,6 +1206,12 @@ a {
   }
 }
 @media screen and (min-width: 992px) {
+  #mainContent.home #presentation {
+    padding: 1rem 3rem;
+  }
+  #mainContent.home #vehicle1 .container {
+    padding: 3rem;
+  }
   #mainContent.home #showroom {
     padding: 1rem 3rem;
   }
@@ -1157,6 +1230,12 @@ a {
   }
 }
 @media screen and (min-width: 1200px) {
+  #mainContent.home #presentation {
+    padding: 2rem 6rem 1rem 6rem;
+  }
+  #mainContent.home #vehicle1 .container {
+    padding: 6rem;
+  }
   #mainContent.home #showroom .card {
     flex: 0 2 32%;
   }
@@ -1181,6 +1260,11 @@ a {
   #mainContent.home #vehicle2 .container .Box1 {
     margin: 3rem 0 6rem 6rem;
     padding: 1rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #mainContent.home #vehicle1 .container {
+    padding: 9rem;
   }
 }
 
