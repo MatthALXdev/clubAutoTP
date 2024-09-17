@@ -1,0 +1,22 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Questrial&display=swap");
+
+//import utils
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/functions";
+
+//import classes
+@import "classes/buttons";
+@import "classes/colors";
+@import "classes/font-sizes";
+@import "classes/background";
+@import "classes/vehicle";
+
+//import modules
+@import "modules/main";
+@import "modules/mainHeader";
+@import "modules/mainFooter";
+@import "modules/home";
+@import "modules/text";

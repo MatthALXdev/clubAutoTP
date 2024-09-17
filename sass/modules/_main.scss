@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: $body-font;
+    font-size: $default-font-size;
+    color: color();
+    @include reset();
+    background-color: color("white");
+    // padding-top: $headerHeight;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $title-font;
+}
+a {
+    text-decoration: none;
+    color: color();
+}
+
+//make images responsive
+@if ($make-images-responsive) {
+    img {
+        @extend .responsive;
+    }
+}
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+.non-responsive {
+    max-width: initial;
+    height: auto;
+}

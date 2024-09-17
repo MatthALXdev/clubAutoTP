@@ -1,0 +1,21 @@
+.vehicle {
+    @extend .bg-image;
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: space(5);
+        padding-top: space(6);
+        div {
+            padding: space(6) space(6) + space(6) space(6) space(6);
+            h2 {
+                font-weight: 800;
+            }
+        }
+        .Box1 {
+            @extend .bg-yellow-op-8;
+        }
+        .Box2 {
+            @extend .bg-red-op-8;
+        }
+    }
+}

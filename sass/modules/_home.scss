@@ -1,0 +1,305 @@
+#mainContent.home {
+    #presentation {
+        padding: map-get($spaces, 5);
+        ul {
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            padding: map-get($spaces, 1);
+            display: flex;
+        }
+        span {
+            margin: 0;
+            padding-right: map-get($spaces, 3);
+            color: color("orange");
+        }
+
+        .divider {
+            border: none;
+            height: 2px;
+            background-color: map-get($colors, "grey");
+            margin: 10px 0;
+        }
+    } // end presentation
+    #vehicle1 {
+        display: flex;
+        align-items: center;
+        background-image: url(/images/vente-location.jpg);
+        background-position: top center;
+        background-size: cover;
+        min-height: 518px;
+        background-repeat: no-repeat;
+        @extend .vehicle;
+        p {
+            @extend .text-white;
+        }
+    } // end vehicle2
+    #showroom {
+        @extend .bg-dark;
+        @extend .text-white;
+        padding: space(3);
+        h2 {
+            margin: 0;
+            padding: space(2);
+            text-align: center;
+        }
+        hr {
+            border: none;
+            height: 3px;
+            background-color: map-get($colors, "orange");
+            margin: space(2) 0 space(4) 0;
+        }
+        #showroom-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: space(2);
+            justify-content: center;
+        }
+        #card2,
+        #card3 {
+            display: none;
+        }
+        .card {
+            width: 100%;
+            /* Pour s'adapter à l'espace disponible */
+            display: flex;
+            flex-direction: column;
+
+            figure {
+                margin: 0 0 space(2) 0;
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            .card-content {
+                font-family: $title-font;
+                font-weight: 700;
+                padding: space(3);
+                @extend .bg-white-op-1;
+                @extend .text-white;
+                @extend .text-sm;
+
+                .card-price {
+                    @extend .btn;
+                    @extend .btn-blue;
+                    @extend .text-white;
+                    font-weight: 700;
+                    margin-left: space(3);
+                    padding: space(2) space(3) space(2) space(2);
+                }
+                .card-description {
+                    padding-right: space(2);
+                }
+                hr {
+                    height: 1px;
+                    @extend .bg-grey-op-2;
+                    margin: space(1) + space(3) 0 0 0;
+                }
+            }
+        }
+    } // end showroom
+    #chooseUs {
+        padding: space(3);
+        .chooseBox {
+            display: flex;
+            flex-wrap: wrap;
+            gap: space(2);
+            justify-content: center;
+        }
+        .chooseItem {
+            width: 100%;
+            /* Pour s'adapter à l'espace disponible */
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            h3 {
+                margin: 0;
+            }
+
+            figure {
+                flex-shrink: 1;
+                margin: 0 space(2);
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            div {
+                flex-shrink: 2;
+                display: flex;
+                flex-direction: column;
+                padding-right: space(6);
+            }
+        }
+        #chooseFooter {
+            width: 100%;
+            margin: space(5) 0 space(4) 0;
+
+            display: flex;
+            justify-content: center;
+            .contactBtn {
+                @extend .btn;
+                @extend .btn-blue;
+                border-radius: space(1);
+                padding: space(3) space(4);
+                a {
+                    @extend .text-white;
+                    font-weight: 600;
+                    font-family: $title-font;
+                }
+            }
+        }
+    } // end chooseUs
+    #vehicle2 {
+        background-image: url(/images/vehicule3.jpg);
+        @extend .vehicle;
+
+        span {
+            @extend .text-white;
+        }
+    } // end vehicule2
+    /*responsive MD and up*/
+
+    @include media-breakpoint-up("md") {
+        #presentation {
+            padding: space(2);
+            div {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: space(3) space(6);
+                align-content: center;
+                div {
+                    grid-template-columns: 1fr;
+                    gap: space(1);
+                }
+                img {
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
+        }
+        #vehicle1 {
+            .container {
+                display: flex;
+                flex-direction: row;
+                padding: space(4);
+                div {
+                    flex: 0 2 49%;
+                }
+            }
+        }
+        #showroom {
+        }
+        #chooseUs {
+            .chooseBox {
+                .chooseItem {
+                    flex: 0 2 49%;
+                }
+            }
+        }
+        #vehicle2 {
+            .container {
+                max-width: 80%;
+
+                .Box1 {
+                    margin: space(6) 0 space(6) * 2 space(6) * 2;
+                    padding: space(3);
+                }
+            }
+        }
+    }
+    /*responsive lg and up*/
+
+    @include media-breakpoint-up("lg") {
+        #presentation {
+            padding: space(3) space(6);
+        }
+        #vehicle1 {
+            .container {
+                padding: space(6);
+            }
+        }
+        #showroom {
+            padding: space(3) space(6);
+            .card {
+                flex: 0 2 49%;
+            }
+            #card2 {
+                display: flex;
+            }
+        }
+        #chooseUs {
+        }
+        #vehicle2 {
+            .container {
+                max-width: 60%;
+
+                .Box1 {
+                    margin: space(6) 0 space(6) * 2 space(6) * 2;
+                    padding: space(3);
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up("xl") {
+        #presentation {
+            padding: space(5) space(6) * 2 space(3) space(6) * 2;
+        }
+        #vehicle1 {
+            .container {
+                padding: space(6) * 2;
+            }
+        }
+        #showroom {
+            .card {
+                flex: 0 2 32%;
+            }
+            #card3 {
+                display: flex;
+            }
+        }
+        #chooseUs {
+            .chooseBox {
+                padding: space(2) space(6);
+                .chooseItem {
+                    flex: 0 2 24%;
+                    div {
+                        padding: space(2);
+                    }
+                }
+            }
+        }
+        #vehicle2 {
+            background-position: top;
+            .container {
+                max-width: 40%;
+
+                .Box1 {
+                    margin: space(6) 0 space(6) * 2 space(6) * 2;
+                    padding: space(3);
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up("xxl") {
+        #presentation {
+        }
+        #vehicle1 {
+            .container {
+                padding: space(6) * 3;
+            }
+        }
+        #showroom {
+        }
+        #chooseUs {
+        }
+
+        #vehicle2 {
+        }
+    }
+}

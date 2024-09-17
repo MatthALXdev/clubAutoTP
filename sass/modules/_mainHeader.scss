@@ -1,0 +1,151 @@
+#mainHeader {
+    font-family: $title-font;
+    @extend .bg-dark;
+    position: relative;
+    max-height: $headerHeight;
+    padding: space(3);
+    @include display-grid;
+    gap: space(2);
+    align-items: end;
+    @extend .text-white;
+
+    align-content: space-between;
+    #frontHeader {
+        padding: space(3);
+        display: flex;
+        flex-direction: column-reverse;
+        #logo {
+            @extend .text-3xl;
+            .logoWord {
+                @extend .text-white;
+            }
+        }
+        #logo,
+        #adresse,
+        #openingHours,
+        #socialTools {
+            display: none;
+        } //end #mainHeader #logo
+        .unitsHeader {
+            display: flex;
+            flex-direction: row;
+            font-weight: bold;
+            align-items: center;
+            a {
+                text-decoration: none;
+                @extend .text-white;
+            }
+            p {
+                margin: 0;
+                @extend .text-orange;
+                span {
+                    @extend .text-white;
+                }
+            }
+            img {
+                width: map-get($font-sizes, "3xl");
+                clip-path: inset(0 0 50px 0);
+            }
+        }
+        #menuToggle {
+            text-align: right;
+            button {
+                @extend .btn;
+                justify-content: flex-end;
+            }
+        }
+    }
+    //end #mainHeader #menuToggle
+    #mainNav {
+        display: none;
+        position: absolute;
+        top: space(6) * 1.95;
+        left: space(3);
+        right: space(3);
+        z-index: 999;
+        @extend .bg-white-op-5;
+        justify-content: flex-end;
+        .listNav {
+            width: 100%;
+            justify-content: flex-end;
+            display: flex;
+            li {
+                padding: space(1) space(3);
+                @extend .text-md;
+                font-weight: 700;
+                list-style: none;
+            }
+        }
+    }
+    //end #mainHeader #mainNav
+    #footHeader img {
+        display: none;
+    }
+    h1 {
+        span {
+            @extend .text-orange;
+        }
+    }
+
+    //responsive SM and up
+    @include media-breakpoint-up("sm") {
+        height: Auto;
+        max-height: none;
+        #footHeader > img {
+            display: flex;
+            width: 100%;
+        }
+        #frontHeader {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: space(2);
+            #logo {
+                display: flex;
+            }
+        }
+    }
+    @include media-breakpoint-up("md") {
+        #frontHeader {
+            max-height: 97px;
+            padding: space(3) space(6);
+        }
+        #frontHeader > #menuToggle {
+            display: none;
+        }
+
+        #frontHeader > #adresse {
+            display: flex;
+            div > address {
+                font-style: normal;
+                font-weight: normal;
+            }
+        }
+        #mainNav {
+            display: flex;
+            .listNav {
+                padding-right: space(5);
+            }
+        }
+    }
+    @include media-breakpoint-up("lg") {
+        #frontHeader {
+            padding: space(3);
+            #openingHours {
+                display: flex;
+            }
+        }
+    }
+    @include media-breakpoint-up("xl") {
+        #frontHeader {
+            #socialTools {
+                display: flex;
+            }
+        }
+    }
+    @include media-breakpoint-up("xxl") {
+        #frontHeader {
+            padding: space(3) space(6);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@each $color, $value in $colors {
+    .text-#{$color} {
+        color: $value;
+    }
+    @each $opacity-name, $opacity-value in $opacities {
+        .text-#{$color}-op-#{$opacity-name} {
+            color: color($color, $opacity-value);
+        }
+    }
+}
+
+@each $color, $value in $colors {
+    .bg-#{$color} {
+        background-color: $value;
+    }
+    @each $opacity-name, $opacity-value in $opacities {
+        .bg-#{$color}-op-#{$opacity-name} {
+            background-color: color($color, $opacity-value);
+        }
+    }
+}
