@@ -289,7 +289,7 @@
   color: #ff4848;
 }
 
-.text-white, #mainContent.home #vehicle2 span, #mainContent.home #chooseUs #chooseFooter .contactBtn a, #mainContent.home #showroom .card .card-content .card-price, #mainContent.home #showroom .card .card-content, #mainContent.home #showroom, #mainContent.home #vehicle1 p, #mainFooter .footerContainer .footerBox .hours, #mainHeader #frontHeader .unitsHeader p span, #mainHeader #frontHeader .unitsHeader a, #mainHeader #frontHeader #logo .logoWord, #mainHeader {
+.text-white, #mainContent.home #vehicle2 span, #mainContent.home #chooseUs #chooseFooter .contactBtn a, #mainContent.home #showroom .card .card-content .card-price, #mainContent.home #showroom .card .card-content, #mainContent.home #showroom, #mainContent.home #vehicle1 p, #mainFooter .footerContainer .footerBox .hours, #mainHeader #frontHeader .unitsHeader p span, #mainHeader #frontHeader .unitsHeader a, #mainHeader #frontHeader .logo .logoWord, #mainHeader {
   color: #ffffff;
 }
 
@@ -529,7 +529,7 @@
   background-color: rgba(35, 38, 40, 0.4);
 }
 
-.bg-dark-op-5 {
+.bg-dark-op-5, #mainInDev div {
   background-color: rgba(35, 38, 40, 0.5);
 }
 
@@ -597,11 +597,11 @@
   background-color: #ff4848;
 }
 
-.bg-white {
+.bg-white, #mainInDev div div {
   background-color: #ffffff;
 }
 
-.bg-white-op-1, #mainContent.home #showroom .card .card-content {
+.bg-white-op-1, #mainContent.home #showroom .card .card-content, #mainHeader #frontHeader #socialTools > img {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -713,7 +713,7 @@
   font-size: 1.4rem;
 }
 
-.text-3xl, #mainHeader #frontHeader #logo {
+.text-3xl, #mainHeader #frontHeader .logo {
   font-size: 1.75rem;
 }
 
@@ -789,7 +789,19 @@ a {
   display: flex;
   flex-direction: column-reverse;
 }
-#mainHeader #frontHeader #logo,
+#mainHeader #frontHeader #menuToggle {
+  text-align: right;
+}
+#mainHeader #frontHeader #menuToggle button {
+  justify-content: flex-end;
+}
+#mainHeader #frontHeader .logo {
+  order: 3;
+}
+#mainHeader #frontHeader .logo#contactLogo {
+  display: flex;
+}
+#mainHeader #frontHeader .logo,
 #mainHeader #frontHeader #adresse,
 #mainHeader #frontHeader #openingHours,
 #mainHeader #frontHeader #socialTools {
@@ -809,14 +821,12 @@ a {
 }
 #mainHeader #frontHeader .unitsHeader img {
   width: 1.75rem;
-  -webkit-clip-path: inset(0 0 50px 0);
-          clip-path: inset(0 0 50px 0);
 }
-#mainHeader #frontHeader #menuToggle {
-  text-align: right;
-}
-#mainHeader #frontHeader #menuToggle button {
-  justify-content: flex-end;
+#mainHeader #frontHeader #socialTools > img {
+  width: 1.5rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  margin: 0.25rem;
 }
 #mainHeader #mainNav {
   display: none;
@@ -855,7 +865,8 @@ a {
     justify-content: space-between;
     gap: 0.5rem;
   }
-  #mainHeader #frontHeader #logo {
+  #mainHeader #frontHeader .logo {
+    order: inherit;
     display: flex;
   }
 }
@@ -1360,5 +1371,41 @@ a {
 @media screen and (min-width: 1200px) {
   #mainContent.text div.content {
     width: 992px;
+  }
+}
+
+#mainInDev div {
+  padding: 1rem;
+}
+#mainInDev div div {
+  border: #cc6119 solid 4px;
+  border-radius: 5px;
+}
+#mainInDev div div p {
+  text-align: center;
+  font-weight: 700;
+}
+@media screen and (min-width: 576px) {
+  #mainInDev div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  #mainInDev div div {
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  #mainInDev div {
+    padding-top: 6rem;
+    padding: 6rem 3rem;
+  }
+  #mainInDev div div {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #mainInDev div div {
+    max-width: 25%;
   }
 }/*# sourceMappingURL=styles.css.map */
