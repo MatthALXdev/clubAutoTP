@@ -14,13 +14,26 @@
         padding: space(3);
         display: flex;
         flex-direction: column-reverse;
-        #logo {
+
+        #menuToggle {
+            text-align: right;
+            button {
+                @extend .btn;
+                justify-content: flex-end;
+            }
+        }
+        .logo {
+            order: 3;
             @extend .text-3xl;
             .logoWord {
                 @extend .text-white;
             }
+            &#contactLogo {
+                display: flex;
+            }
         }
-        #logo,
+
+        .logo,
         #adresse,
         #openingHours,
         #socialTools {
@@ -44,15 +57,15 @@
             }
             img {
                 width: map-get($font-sizes, "3xl");
-                clip-path: inset(0 0 50px 0);
             }
         }
-        #menuToggle {
-            text-align: right;
-            button {
-                @extend .btn;
-                justify-content: flex-end;
-            }
+
+        #socialTools > img {
+            width: space(4);
+            @extend .bg-white-op-1;
+            padding: space(1);
+            border-radius: 50%;
+            margin: space(1);
         }
     }
     //end #mainHeader #menuToggle
@@ -100,7 +113,8 @@
             flex-direction: row;
             justify-content: space-between;
             gap: space(2);
-            #logo {
+            .logo {
+                order: inherit;
                 display: flex;
             }
         }

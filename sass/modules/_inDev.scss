@@ -1,0 +1,42 @@
+#mainInDev {
+    div {
+        padding: space(3);
+        @extend .bg-dark-op-5;
+        div {
+            @extend .bg-white;
+            border: color("orange") solid 4px;
+            @include border-radius();
+
+            p {
+                text-align: center;
+                font-weight: 700;
+            }
+        }
+    }
+    @include media-breakpoint-up("sm") {
+        div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            div {
+                max-width: 50%;
+            }
+        }
+    }
+    @include media-breakpoint-up("md") {
+        div {
+            padding-top: space(6) * 2;
+            padding: space(6) * 2 space(6);
+            div {
+                padding: space(3);
+            }
+        }
+    }
+    @include media-breakpoint-up("xl") {
+        div {
+            div {
+                max-width: 25%;
+            }
+        }
+    }
+}
